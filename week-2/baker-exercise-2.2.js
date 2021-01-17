@@ -29,6 +29,7 @@ console.log(header.display("Tiffany", "Baker", "exercise 2.2"));
 
 // start program
 
+//creates a function to retrieve age
 var person =
 {
 
@@ -39,7 +40,7 @@ var person =
 
   }
 };
-
+//creates a object displaying the age function and needed values
 var tammy = Object.create(person,
   {
     "age":
@@ -54,6 +55,7 @@ var tammy = Object.create(person,
 
   tammy.getAge();
 
+  //output
   console.log("The persons full name is: '%s'", tammy.fullName);
   console.log("The persons age is: '%s'", tammy.age);
 
