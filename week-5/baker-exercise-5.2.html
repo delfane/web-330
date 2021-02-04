@@ -1,0 +1,91 @@
+<!--
+
+============================================
+; Title:  exercise-5.2
+; Author: tiffany baker
+; Date:   2/4/2021
+; Modified By: Tiffany Baker
+; Description: page with button displaying content.
+;===========================================
+
+-->
+
+<!Doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+        <title>Exercise 5.2 - The Proxy Pattern</title>
+
+        <!--stylesheets-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+
+        <!--jquery reference libary-->
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    </head>
+    <body>
+
+      <script>
+        $(function() {
+
+          var flowerBed = {
+
+            flower1: "Sun Flower",
+            flower2: "Daisies",
+            flower3: "Roses",
+
+            display: function() {
+
+              //clears span tag for content
+
+              $("#spanProxyResults").html("");
+
+              //writes content
+
+              $("#spanProxyResults").append("<br> Choice 1: " + this.flower1 + "<br>" + "Choice 2: " + this.flower2 + "<br>" + "Choice 3: " + this.flower3);
+            }
+          };
+
+          $("#previewBtn").click($.proxy(flowerBed, "display"));
+
+        });
+      </script>
+
+      <!--nav bar-->
+
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        <br>
+        <!--container holding button-->
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <h2>Exercise 5.2 - The Proxy Pattern</h2>
+
+              <!--button-->
+              <button class="btn btn-danger" id="previewBtn">Preview</button>
+
+              <br>
+              <span id="spanProxyResults"></span>
+
+
+            </div>
+          </div>
+        </div>
+
+    </body>
+  </html>
